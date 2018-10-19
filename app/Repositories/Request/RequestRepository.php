@@ -27,23 +27,30 @@ class RequestRepository implements RequestInterface
     }
 
     public function save(array $data) {
+
+        //mesajes para validacion en caso de que no pasen la verificacion
         $messages = [
             'age.required' => 'La Edad es requerida.',
             'amount.required' => 'El Monto es requerido.',
             'term_id.required' => 'El plazo es requerido.',
         ];
 
+        //reglas de validacion
         $rules = [
             'age' => 'required',
             'amount' => 'required',
             'term_id' => 'required',
         ];
 
+        //ejecutar validacion
         $validator = Validator::make($data, $rules, $messages);
 
+        //validacion para corroborar que no haya fallos
         if(!$validator->fails()) {
+            //se obtiene el formato necesario para almacenar desde handler
             $request = $this->handler->prepare($data);
 
+            //creacion del registro en base de datos
             $request_data = $this->model->create([
                 'age' => $request['age'],
                 'amount' => $request['amount'],
@@ -52,9 +59,12 @@ class RequestRepository implements RequestInterface
                 'total_amount' => $request['total_amount'],
             ]);
 
+            //llamada por almacenado en repositorio UserRequest
+            //se le envia el id de la solicitud almacenada anteriormente
             $user_request = $this->user_request->save($request_data->id);
         }
 
+        //retorna los mensajes
         return $validator->messages();
     }
 }

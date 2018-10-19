@@ -20,6 +20,7 @@ class OptionTermRepository implements OptionTermInterface
         $this->model = $app[OptionTerm::class];
     }
 
+    //obtencion de plazos almacenados en base de datos
     public function getTerms() {
         $terms = $this->model->all();
         return $terms;

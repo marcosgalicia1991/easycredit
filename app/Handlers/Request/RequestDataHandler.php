@@ -6,12 +6,6 @@ class RequestDataHandler implements RequestDataHandlerInterface
 {
 	public function prepare(array $data)
 	{
-		//$request = [];
-
-
-
-        //return $request;
-
         return [
             'age' => array_get($data, 'age', 0),
             'amount' => array_get($data, 'amount', 0),

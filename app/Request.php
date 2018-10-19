@@ -16,14 +16,13 @@ class Request extends Model
         'total_amount',
     ];
 
-    /**
-     * Get the user request associated with the request.
-     */
+    //relacion con tabla user_requests
     public function userRequest()
     {
         return $this->hasOne('App\userRequest', 'request_id');
     }
 
+    //relacion con tabla option_terms
     public function term()
     {
     	return $this->hasOne('App\OptionTerm', 'id', 'term_id');

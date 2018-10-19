@@ -3,7 +3,6 @@ export default {
         return new Promise((resolve, reject) => {
             axios.post(`/login`, user)
             .then(function (response) {
-                //vm.logged = response.data.login;
                 resolve(response.data);
             })
             .catch(function (error) {

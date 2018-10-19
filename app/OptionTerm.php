@@ -14,6 +14,7 @@ class OptionTerm extends Model
         //'deleted_at',
     ];
 
+    //relacion con tabla requests
     public function request()
     {
         return $this->belongsTo('App\Request', 'term_id');

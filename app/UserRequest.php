@@ -19,6 +19,7 @@ class UserRequest extends Model
         'status',
     ];
 
+    //relacion con tabla requests
     public function request()
     {
         return $this->belongsTo('App\Request', 'request_id');

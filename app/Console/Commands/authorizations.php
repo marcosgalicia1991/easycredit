@@ -38,6 +38,7 @@ class authorizations extends Command
      */
     public function handle()
     {
+        //obtencion de registros esperando aprobacion
         $data = UserRequest::with('request.term')
             ->with('request.term')
             ->where('status',0)
@@ -45,10 +46,15 @@ class authorizations extends Command
 
         foreach($data as $item) {
             $status = 2;
+
+            //validacion para autorizacion
             if($item->request->age >= 20 && $item->request->credit_card == 1) {
                 $status = 1;
             }
 
+            //obtencion de registro individual
+            //para posteriormente actualizar el status
+            //y almacenar en base de datos
             $user_request = UserRequest::firstOrNew(['id' => $item->id]);
 
             $user_request->status = $status;

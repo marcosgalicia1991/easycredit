@@ -24,8 +24,8 @@
 		},
 		methods: {
 			...mapActions('user', [
-				'logged',
-				'logout',
+				'logged',//action de store para verificar si hay usuario loggeado
+				'logout',//action de store para hacer loguot a usuario
 			]),
 		}
 	}
