@@ -1,0 +1,37 @@
+#record-container {
+    margin-bottom: 8px;
+
+    & > div {
+    	&:first-child {
+			text-align:center;
+			color: white;
+			background-color: blue;
+		}
+		
+    	&:last-child {
+    		border: 1px solid blue;
+    		border-top: none;
+    	}
+
+    	& {
+    		border-left: 1px solid blue;
+    		border-right: 1px solid blue;
+    	}
+
+        .item-container {
+            padding: 0 8px;
+
+            &:not(:last-child) {
+                border-bottom: 1px solid $record-container-item;
+            }
+        }
+
+        .item-accepted {
+            color: green;
+        }
+
+        .item-rejected {
+            color: red;
+        }
+    }
+}

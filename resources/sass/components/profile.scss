@@ -1,0 +1,21 @@
+#profile-container {
+    margin-bottom: 8px;
+
+	& > div {
+    	&:first-child {
+			text-align:center;
+			color: white;
+			background-color: green;
+		}
+		
+    	&:last-child {
+    		border: 1px solid green;
+    		border-top: none;
+    	}
+
+    	& {
+    		border-left: 1px solid green;
+    		border-right: 1px solid green;
+    	}
+    }
+}

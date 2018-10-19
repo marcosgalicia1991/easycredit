@@ -1,0 +1,47 @@
+#request-container {
+    margin-bottom: 8px;
+
+    & > div {
+    	&:first-child {
+			text-align:center;
+			color: white;
+			background-color: red;
+		}
+		
+    	&:last-child {
+    		border: 1px solid red;
+    		border-top: none;
+    	}
+
+    	& {
+    		border-left: 1px solid red;
+    		border-right: 1px solid red;
+    	}
+
+        & > button {
+            width: 100%;
+            background-color: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+
+            &:hover {
+                background-color: rgb(170, 0, 0);
+            }
+        }
+
+        .item-container {
+            padding: 0 8px;
+
+            &:not(:last-child) {
+                border-bottom: 1px solid $request-container-item;
+            }
+
+            .button-delete {
+                cursor: pointer;
+                color: red;
+                float: right;
+            }
+        }
+    }
+}

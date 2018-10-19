@@ -1,0 +1,63 @@
+#app > div{
+	margin: 0;
+
+	& > div:first-child {
+		/*text-align: right;*/
+    	margin-bottom: 10px;
+
+    	span {
+    		color: green;
+    	}
+	}
+
+	.btn-logout {
+        background-color: red;
+        color: white;
+        border: none;
+        cursor: pointer;
+        float: right;
+
+        &:hover {
+            background-color: rgb(170, 0, 0);
+        }
+	}
+
+    #login-container {
+        text-align: center;
+        margin-top: 25px;
+    }
+
+    .alert-min {
+        font-size: 14px;
+        font-weight: 600;
+        padding: 4px;
+        margin: 0;
+        border: 1px solid #efefef;
+        border-radius: 4px;
+        width: 100%;
+
+        &.hide {
+            display: none;
+        }
+
+        &.active {
+            animation: scale-display .6s;
+            display: inline-flex;
+        }
+
+        &.out {
+            animation: scale-display--reversed .6s;
+            animation-fill-mode:forwards;
+            display: inline-flex;
+        }
+
+        .loading-gif {
+            width: 18px;
+            height: 18px;
+        }
+
+        span {
+            line-height: 18px;
+        }
+    }
+}
